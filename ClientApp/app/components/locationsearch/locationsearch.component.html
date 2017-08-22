@@ -1,0 +1,6 @@
+﻿<div class="input-group">
+    <input #box (keyup.enter)="search(box.value)" type="text" class="form-control" placeholder="Search for a city or town..." required>
+    <span class="input-group-btn">
+        <button (click)="search(box.value)" class="btn btn-default" type="submit">Go!</button>
+    </span>
+</div>
