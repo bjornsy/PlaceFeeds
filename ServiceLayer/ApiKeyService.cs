@@ -9,10 +9,11 @@ namespace PlaceFeeds.ServiceLayer
     public class ApiKeyService: IApiKeyService
     {
         private static List<ApiKey> apiKeys = new List<ApiKey> {
-           new ApiKey { Type = ApiType.Location, Key = "GoogleKey", Secret = "GoogleSecret"},
-           new ApiKey { Type = ApiType.Weather, Key = "OpenWeatherKey"},
-           new ApiKey { Type = ApiType.Image, Key = "FlickrKey"},
-           new ApiKey { Type = ApiType.Twitter, Key = "TwitterKey", Secret = "TwitterSecret"}
+           new ApiKey { Type = ApiType.Location, Key = "", Secret = ""},
+           new ApiKey { Type = ApiType.Weather, Key = ""},
+           new ApiKey { Type = ApiType.Image, Key = ""},
+           new ApiKey { Type = ApiType.Twitter, Key = "", Secret = ""},
+           new ApiKey { Type = ApiType.Meetup, Key = ""}
         };
 
         public string GetApiKey(ApiType apiType)

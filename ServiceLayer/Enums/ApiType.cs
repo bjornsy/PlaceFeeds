@@ -10,6 +10,7 @@ namespace PlaceFeeds.ServiceLayer.Enums
         Location,
         Weather,
         Image,
-        Twitter
+        Twitter,
+        Meetup
     }
 }

@@ -10,6 +10,7 @@ import { WeatherTemperaturePipe } from './components/weather/weather-temp.pipe';
 import { ImagesComponent } from './components/images/images.component';
 import { GalleryComponent } from './components/images/gallery.component';
 import { TwitterComponent } from './components/twitter/twitter.component';
+import { MeetupComponent } from './components/meetup/meetup.component';
 
 export const sharedConfig: NgModule = {
     bootstrap: [ AppComponent ],
@@ -22,7 +23,8 @@ export const sharedConfig: NgModule = {
         WeatherTemperaturePipe,
         ImagesComponent,
         GalleryComponent,
-        TwitterComponent
+        TwitterComponent,
+        MeetupComponent
     ],
     imports: [
         RouterModule.forRoot([
