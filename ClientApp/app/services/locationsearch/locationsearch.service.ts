@@ -4,14 +4,10 @@ import { Observable } from 'rxjs/observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
-import { ApiType } from '../../enums/ApiType';
-
 @Injectable()
 export class LocationSearchService {
     //Uses google geocode api to get lat/long and also check it is a real place
     //https://developers.google.com/maps/documentation/geocoding/intro
-
-    apiKey: any;
 
     constructor(private _http: Http) { }
 
