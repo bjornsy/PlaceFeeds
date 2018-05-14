@@ -8,13 +8,7 @@ namespace PlaceFeeds.ServiceLayer
 {
     public class ApiKeyService: IApiKeyService
     {
-        private static List<ApiKey> apiKeys = new List<ApiKey> {
-           new ApiKey { Type = ApiType.Location, Key = "", Secret = ""},
-           new ApiKey { Type = ApiType.Weather, Key = ""},
-           new ApiKey { Type = ApiType.Image, Key = ""},
-           new ApiKey { Type = ApiType.Twitter, Key = "", Secret = ""},
-           new ApiKey { Type = ApiType.Meetup, Key = ""}
-        };
+        List<ApiKey> apiKeys = ApiKeys.apiKeys;
 
         public string GetApiKey(ApiType apiType)
         {
