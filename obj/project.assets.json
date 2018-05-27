@@ -9834,9 +9834,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Bjorn\\Documents\\Visual Studio 2017\\Projects\\PlaceFeeds\\PlaceFeeds.csproj",
-      "projectName": "PlaceFeeds",
-      "projectPath": "C:\\Users\\Bjorn\\Documents\\Visual Studio 2017\\Projects\\PlaceFeeds\\PlaceFeeds.csproj",
+      "projectUniqueName": "C:\\Users\\Bjorn\\Documents\\Visual Studio 2017\\Projects\\PlaceFeeds\\PlaceFeedsApp.csproj",
+      "projectName": "PlaceFeedsApp",
+      "projectPath": "C:\\Users\\Bjorn\\Documents\\Visual Studio 2017\\Projects\\PlaceFeeds\\PlaceFeedsApp.csproj",
       "outputPath": "C:\\Users\\Bjorn\\Documents\\Visual Studio 2017\\Projects\\PlaceFeeds\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [

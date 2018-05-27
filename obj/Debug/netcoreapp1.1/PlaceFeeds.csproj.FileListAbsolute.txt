@@ -1,9 +1,0 @@
-C:\Users\Bjorn\Documents\Visual Studio 2017\Projects\PlaceFeeds\bin\Debug\netcoreapp1.1\PlaceFeeds.deps.json
-C:\Users\Bjorn\Documents\Visual Studio 2017\Projects\PlaceFeeds\bin\Debug\netcoreapp1.1\PlaceFeeds.runtimeconfig.json
-C:\Users\Bjorn\Documents\Visual Studio 2017\Projects\PlaceFeeds\bin\Debug\netcoreapp1.1\PlaceFeeds.runtimeconfig.dev.json
-C:\Users\Bjorn\Documents\Visual Studio 2017\Projects\PlaceFeeds\bin\Debug\netcoreapp1.1\PlaceFeeds.dll
-C:\Users\Bjorn\Documents\Visual Studio 2017\Projects\PlaceFeeds\bin\Debug\netcoreapp1.1\PlaceFeeds.pdb
-C:\Users\Bjorn\Documents\Visual Studio 2017\Projects\PlaceFeeds\obj\Debug\netcoreapp1.1\PlaceFeeds.csprojResolveAssemblyReference.cache
-C:\Users\Bjorn\Documents\Visual Studio 2017\Projects\PlaceFeeds\obj\Debug\netcoreapp1.1\PlaceFeeds.AssemblyInfo.cs
-C:\Users\Bjorn\Documents\Visual Studio 2017\Projects\PlaceFeeds\obj\Debug\netcoreapp1.1\PlaceFeeds.dll
-C:\Users\Bjorn\Documents\Visual Studio 2017\Projects\PlaceFeeds\obj\Debug\netcoreapp1.1\PlaceFeeds.pdb

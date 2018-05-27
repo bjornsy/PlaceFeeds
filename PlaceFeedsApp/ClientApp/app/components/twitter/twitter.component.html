@@ -1,0 +1,24 @@
+﻿<div class="panel panel-info">
+    <!-- Default panel contents -->
+    <div class="panel-heading">
+        <span>Recent Tweets</span><span *ngIf=(twitterData)> from {{placeObject.formattedAddress}}</span>
+    </div>
+    <div *ngIf="(twitterData)" style="height: 280px; overflow: auto;">
+        <table class="table table-striped">
+            <tbody>
+                <tr *ngFor="let tweet of twitterData">
+                    <td>
+                        <span>
+                            <img src="{{tweet.user.profile_image_url_https}}"/>                           
+                        </span>
+                        <span><a href="https://www.twitter.com/{{tweet.user.screen_name}}">@{{tweet.user.screen_name}}</a></span>
+                        <span>{{tweet.created_at | date:"MMM dd"}}</span>
+                        <br />
+                        {{tweet.text}}      
+                        <!--<span innerHtml="{{tweet.text}}"></span>-->
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

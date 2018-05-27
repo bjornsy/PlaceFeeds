@@ -1,0 +1,22 @@
+﻿<div class="modal fade" id="selectedImageModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="selectedImage" *ngIf="selectedImage">
+                    <img src="{{selectedImage.photoUrl}}">
+                    <div class="caption">
+                        <a href="{{selectedImage.ownerUrl}}" target="_blank">See other photos like this</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="grid">
+        <div class="cell" *ngFor="let imageUrls of datasource">
+            <img src="{{imageUrls.photoUrl}}" class="responsive-image" width="191" height="146" data-toggle="modal" data-target="#selectedImageModal"
+                 (click)=setSelectedImage(imageUrls)>
+        </div>
+    </div>
+</div>

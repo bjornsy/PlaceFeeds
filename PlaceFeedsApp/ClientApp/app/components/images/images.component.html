@@ -1,0 +1,8 @@
+﻿<div class="panel panel-info">
+    <div class="panel-heading">
+        <span>Latest images</span><span *ngIf=(imageList)> from {{placeObject.formattedAddress}}</span>
+    </div>
+    <div class="panel-body">
+        <gallery [datasource]="imageList"></gallery>
+    </div>
+</div>

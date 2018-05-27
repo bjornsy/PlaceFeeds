@@ -1,0 +1,43 @@
+﻿.modal-dialog {
+    position: relative;
+    display: table;
+    overflow-y: auto;
+    overflow-x: auto;
+    width: auto;
+    min-width: 300px;
+}
+
+.container {
+    margin: auto;
+    max-width: 1200px;
+}
+
+.responsive-image {
+    max-width: 100%;
+    margin: 2px 0px;
+    cursor: pointer
+}
+
+.cell img {
+    display: block;
+    padding: 3px;
+}
+
+
+@media screen and (min-width: 600px) {
+    .grid {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
+    .cell {
+        width: 33%;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .cell {
+        width: calc(100% / 6);
+    }
+}
