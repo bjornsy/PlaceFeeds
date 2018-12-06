@@ -1,15 +1,12 @@
 ﻿<Project ToolsVersion="15.0" Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
-    <TargetFramework>netcoreapp1.1</TargetFramework>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
     <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
     <IsPackable>false</IsPackable>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore" Version="1.1.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.1" />
-    <PackageReference Include="Microsoft.AspNetCore.SpaServices" Version="1.1.1" />
-    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.1.0" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.9" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="2.2.0" />
     <PackageReference Include="TweetinviAPI" Version="2.0.0" />
   </ItemGroup>
   <ItemGroup>
@@ -21,31 +18,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot/weather-icons.css" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="wwwroot\assets\font\weathericons-regular-webfont.eot" />
-    <Content Include="wwwroot\assets\font\weathericons-regular-webfont.svg" />
-    <Content Include="wwwroot\assets\font\weathericons-regular-webfont.ttf" />
-    <Content Include="wwwroot\assets\font\weathericons-regular-webfont.woff" />
-    <Content Include="wwwroot\assets\font\weathericons-regular-webfont.woff2" />
-    <Content Include="wwwroot\assets\camera.svg" />
-    <Content Include="wwwroot\assets\cloud-drizzle.svg" />
-    <Content Include="wwwroot\assets\github.svg" />
-    <Content Include="wwwroot\assets\image.svg" />
-    <Content Include="wwwroot\assets\map-pin.svg" />
-    <Content Include="wwwroot\assets\twitter.svg" />
-    <Content Include="wwwroot\styles.css" />
-    <Content Include="wwwroot\weather-icons.min.css" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="wwwroot\assets\font\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="wwwroot\assets\font\weathericons-regular-webfont.eot" />
-    <None Include="wwwroot\assets\font\weathericons-regular-webfont.svg" />
-    <None Include="wwwroot\assets\font\weathericons-regular-webfont.ttf" />
-    <None Include="wwwroot\assets\font\weathericons-regular-webfont.woff" />
-    <None Include="wwwroot\assets\font\weathericons-regular-webfont.woff2" />
   </ItemGroup>
   <Target Name="RunWebpack" AfterTargets="ComputeFilesToPublish">
     <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
