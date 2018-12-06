@@ -1,5 +1,5 @@
 # PlaceFeeds
-Get all the latest info of any place (Angular 2/.NET Core 1.1/webpack)
+Get all the latest info of any place (Angular 2/.NET Core 2.1/webpack)
 An SPA to show what's going on at any location you search for - including weather, things to do and latest photos taken in that area.
 
 ## APIs used (free)
