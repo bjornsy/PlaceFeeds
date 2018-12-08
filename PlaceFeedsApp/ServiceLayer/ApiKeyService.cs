@@ -1,4 +1,5 @@
-﻿using PlaceFeeds.ServiceLayer.Enums;
+﻿using Microsoft.Extensions.Configuration;
+using PlaceFeeds.ServiceLayer.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,26 +9,23 @@ namespace PlaceFeeds.ServiceLayer
 {
     public class ApiKeyService: IApiKeyService
     {
-        List<ApiKey> apiKeys = ApiKeys.apiKeys;
+        private readonly IConfiguration Configuration;
+
+        public ApiKeyService(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
 
         public string GetApiKey(ApiType apiType)
         {
-            var key = (apiKeys.FirstOrDefault(a => a.Type == apiType)).Key;
-            return key;
+            return Configuration[apiType.ToString()+":ApiKey"];
         }
 
         public string GetApiSecret(ApiType apiType)
         {
-            return (apiKeys.FirstOrDefault(a => a.Type == apiType)).Secret;
+            return Configuration[apiType.ToString() + ":Secret"];
         }
     
-    }
-
-    public class ApiKey
-    {
-        public ApiType Type { get; set; }
-        public string Key { get; set; }
-        public string Secret { get; set; }
     }
 }
 
