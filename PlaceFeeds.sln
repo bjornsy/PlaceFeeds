@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26430.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlaceFeedsApp", "PlaceFeedsApp\PlaceFeedsApp.csproj", "{6AFB4D2C-723D-467E-92B6-A21DD3B6E110}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlaceFeedTests", "PlaceFeedTests\PlaceFeedTests.csproj", "{E661DF7F-21B0-4517-A775-24B8E23EC97B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlaceFeedsTests", "PlaceFeedTests\PlaceFeedsTests.csproj", "{E661DF7F-21B0-4517-A775-24B8E23EC97B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +24,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4B46808A-AFA2-45F2-B20B-0DC9E0E8A426}
 	EndGlobalSection
 EndGlobal
