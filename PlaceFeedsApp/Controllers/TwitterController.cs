@@ -1,67 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
-using Tweetinvi;
-using Tweetinvi.Models;
-using Tweetinvi.Parameters;
+using System.Threading.Tasks;
+using Tweetinvi.Models.DTO;
 using Newtonsoft.Json;
-using PlaceFeeds.ServiceLayer;
-using PlaceFeeds.ServiceLayer.Enums;
+using PlaceFeedsServices.TwitterService;
 
 namespace PlaceFeeds.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     public class TwitterController : Controller
     {
 
-        public IApiKeyService ApiKeyService { get; set; }
+        private readonly ITwitterService _twitterService;
 
-        public TwitterController(IApiKeyService apiKeyService)
+        public TwitterController(ITwitterService twitterService)
         {
-            ApiKeyService = apiKeyService;
+            _twitterService = twitterService;
         }
 
-
-        [HttpGet("[action]")]
-        public JsonResult GetTwitterResults(string placeName, double latitude, double longitude)
+        [HttpGet]
+        public async Task<JsonResult> GetTwitterResults(string placeName, double latitude, double longitude)
         {
-
-            // Set up your credentials
-            var appCreds = Auth.SetApplicationOnlyCredentials(ApiKeyService.GetApiKey(ApiType.Twitter), ApiKeyService.GetApiSecret(ApiType.Twitter), true);
-
-            var searchParameter = new SearchTweetsParameters(placeName)
-            {
-                GeoCode = new GeoCode(latitude, longitude, 3, DistanceMeasure.Miles),
-                TweetSearchType = TweetSearchType.OriginalTweetsOnly,
-                SearchType = SearchResultType.Recent,
-                MaximumNumberOfResults = 30,
-                //Until = DateTime.UtcNow
-            };
-
-            var tweets = Search.SearchTweets(searchParameter);          
-
-            if (tweets.Count() == 0)
-            {
-                searchParameter = new SearchTweetsParameters(placeName) //Not limiting by geocode for more results
-                {
-                    SearchType = SearchResultType.Popular,
-                    MaximumNumberOfResults = 30,
-                };
-                tweets = Search.SearchTweets(searchParameter);
-            }
-
-            var tweetsDistinctUsers = tweets.GroupBy(t => t.CreatedBy.IdStr).Select(g => g.First());
-            var tweetsDTO = tweetsDistinctUsers.Select(x => x.TweetDTO);
-
-            return Json(tweetsDTO); 
+            IEnumerable<ITweetDTO> tweetResults = await _twitterService.GetTwitterResults(placeName, latitude, longitude);
+            return new JsonResult(JsonConvert.SerializeObject(tweetResults));
         }
 
-
-    }
-
-    
+    }   
 }
 
 

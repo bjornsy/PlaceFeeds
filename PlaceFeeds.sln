@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlaceFeedsApp", "PlaceFeeds
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlaceFeedsTests", "PlaceFeedsTests\PlaceFeedsTests.csproj", "{083EF8CA-53A9-4428-90EF-36B09E230BCE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlaceFeedsServices", "PlaceFeedsServices\PlaceFeedsServices.csproj", "{88BF99FF-130D-4262-9ED1-3E395F80B339}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{083EF8CA-53A9-4428-90EF-36B09E230BCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{083EF8CA-53A9-4428-90EF-36B09E230BCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{083EF8CA-53A9-4428-90EF-36B09E230BCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88BF99FF-130D-4262-9ED1-3E395F80B339}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88BF99FF-130D-4262-9ED1-3E395F80B339}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88BF99FF-130D-4262-9ED1-3E395F80B339}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88BF99FF-130D-4262-9ED1-3E395F80B339}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

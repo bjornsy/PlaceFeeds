@@ -1,50 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using System.Net.Http;
-using PlaceFeeds.ServiceLayer;
-using PlaceFeeds.ServiceLayer.Enums;
+using PlaceFeedsServices.LocationService;
 
 namespace PlaceFeeds.Controllers
 {
-    [Route("api/[controller]/[action]")]
+    [Route("[controller]/[action]")]
     public class LocationSearchController : Controller
     {
-        public IApiKeyService ApiKeyService { get; set; }
+        private readonly ILocationService _locationService;
 
-        public LocationSearchController(IApiKeyService apiKeyService)
+        public LocationSearchController(ILocationService locationService)
         {
-            ApiKeyService = apiKeyService;
+            _locationService = locationService;
         }
 
         [HttpGet("{locationName}")]
-        public async Task<ActionResult> GetLocationData(string locationName)
+        public async Task<JsonResult> GetLocationData(string locationName)
         {
-            using (var client = new HttpClient())
-            {
-                try
-                {
-                    var apiKey = ApiKeyService.GetApiKey(ApiType.Location);
-
-                    client.BaseAddress = new Uri("https://maps.googleapis.com/maps/api/geocode/");
-                    var response = await client.GetAsync($"json?address={locationName}&key={apiKey}");
-                    response.EnsureSuccessStatusCode();
-
-                    var stringResult = await response.Content.ReadAsStringAsync();
-                    var locationData = JsonConvert.DeserializeObject(stringResult);
-                    return Ok(new
-                    {
-                        LocationData = locationData
-                    });
-                }
-                catch (HttpRequestException httpRequestException)
-                {
-                    return BadRequest($"Error getting data from GoogleMaps: {httpRequestException.Message}");
-                }
-            }
+            string jsonString = await _locationService.GetLocationData(locationName);
+            return new JsonResult(JsonConvert.DeserializeObject(jsonString));
         }
 
     }

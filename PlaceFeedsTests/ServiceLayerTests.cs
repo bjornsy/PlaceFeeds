@@ -1,9 +1,4 @@
-using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PlaceFeeds.ServiceLayer;
-using PlaceFeeds.ServiceLayer.Enums;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace PlaceFeedTests
 {

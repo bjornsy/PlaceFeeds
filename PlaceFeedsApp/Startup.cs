@@ -1,14 +1,15 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using PlaceFeeds.ServiceLayer;
+using PlaceFeedsServices.ApiKeyService;
+using PlaceFeedsServices.ImageService;
+using PlaceFeedsServices.LocationService;
+using PlaceFeedsServices.MeetupService;
+using PlaceFeedsServices.TwitterService;
+using PlaceFeedsServices.WeatherService;
 
 namespace PlaceFeeds
 {
@@ -21,6 +22,12 @@ namespace PlaceFeeds
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
                 .AddEnvironmentVariables();
+
+            if (env.IsDevelopment())
+            {
+                builder.AddUserSecrets<Startup>();
+            }
+
             Configuration = builder.Build();
         }
 
@@ -31,7 +38,12 @@ namespace PlaceFeeds
         {
             // Add framework services.
             services.AddMvc();
-            services.AddSingleton<IApiKeyService, ApiKeyService>();
+            services.AddScoped<IApiKeyService, ApiKeyService>();
+            services.AddScoped<ILocationService, LocationService>();
+            services.AddScoped<IImageService, ImageService>();
+            services.AddScoped<IMeetupService, MeetupService>();
+            services.AddScoped<ITwitterService, TwitterService>();
+            services.AddScoped<IWeatherService, WeatherService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
