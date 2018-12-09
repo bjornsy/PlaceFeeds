@@ -9,16 +9,10 @@ export class MeetupService {
 
     constructor(private _http: Http) { }
 
-    getMeetupData(latitude: number, longitude: number): Observable<Response> {
+    getMeetupData(latitude: number, longitude: number): Observable<any> {
 
-        return this._http.get(`api/Meetup/GetMeetupData/?latitude=${latitude}&longitude=${longitude}`)
-            .map((response: Response) => response.json())
-            .catch(this.handleError);
-    }
-
-    public handleError(error: Response) {
-        console.log(error);
-        return Observable.throw(error.json().error || 'Server error');
+        return this._http.get(`Meetup/GetMeetupData/?latitude=${latitude}&longitude=${longitude}`)
+            .map((response: Response) => response.json());
     }
 
 };

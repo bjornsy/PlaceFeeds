@@ -15,7 +15,7 @@ namespace PlaceFeedsServices.WeatherService
             _apiKeyService = apiKeyService;
         }
 
-        public async Task<string> GetWeatherData(float latitude, float longitude)
+        public async Task<string> GetWeatherData(double latitude, double longitude)
         {
             using (HttpClient client = new HttpClient())
             {

@@ -26,10 +26,9 @@ export class TwitterComponent {
     }
 
     getData(placeObject: IPlaceObject) {
-        this._TwitterService.getTwitterData(this.placeObject.formattedAddress, this.placeObject.latitude, this.placeObject.longitude)
-            .subscribe(twitterdata => {
-                this.twitterData = twitterdata;
-                this.twitterData = JSON.parse(this.twitterData._body);                   
+        this._TwitterService.getTwitterData(placeObject.formattedAddress, placeObject.latitude, placeObject.longitude)
+            .subscribe(twitterData => {
+                this.twitterData = twitterData;
             })
     }
 

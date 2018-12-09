@@ -7,7 +7,7 @@ using PlaceFeedsServices.TwitterService;
 
 namespace PlaceFeeds.Controllers
 {
-    [Route("[controller]")]
+    [Route("[controller]/[action]")]
     public class TwitterController : Controller
     {
 
@@ -22,7 +22,7 @@ namespace PlaceFeeds.Controllers
         public async Task<JsonResult> GetTwitterResults(string placeName, double latitude, double longitude)
         {
             IEnumerable<ITweetDTO> tweetResults = await _twitterService.GetTwitterResults(placeName, latitude, longitude);
-            return new JsonResult(JsonConvert.SerializeObject(tweetResults));
+            return Json(tweetResults);
         }
 
     }   

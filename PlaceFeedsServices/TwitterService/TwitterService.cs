@@ -26,7 +26,7 @@ namespace PlaceFeedsServices.TwitterService
 
             var searchParameter = new SearchTweetsParameters(placeName)
             {
-                GeoCode = new GeoCode(latitude, longitude, 3, DistanceMeasure.Miles),
+                GeoCode = new GeoCode(latitude, longitude, 10, DistanceMeasure.Miles),
                 TweetSearchType = TweetSearchType.OriginalTweetsOnly,
                 SearchType = SearchResultType.Recent,
                 MaximumNumberOfResults = 30,

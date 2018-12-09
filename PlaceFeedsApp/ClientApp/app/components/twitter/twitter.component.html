@@ -13,9 +13,8 @@
                         </span>
                         <span><a href="https://www.twitter.com/{{tweet.user.screen_name}}">@{{tweet.user.screen_name}}</a></span>
                         <span>{{tweet.created_at | date:"MMM dd"}}</span>
-                        <br />
-                        {{tweet.text}}      
-                        <!--<span innerHtml="{{tweet.text}}"></span>-->
+                        <br /> 
+                        <span innerHtml="{{tweet.full_text}}"></span>
                     </td>
                 </tr>
             </tbody>

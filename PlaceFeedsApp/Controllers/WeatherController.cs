@@ -16,7 +16,7 @@ namespace PlaceFeeds.Controllers
         }
 
         [HttpGet]
-        public async Task<JsonResult> GetWeatherData(float latitude, float longitude)
+        public async Task<JsonResult> GetWeatherData(double latitude, double longitude)
         {
             string jsonString = await _weatherService.GetWeatherData(latitude, longitude);
             return new JsonResult(JsonConvert.DeserializeObject(jsonString));

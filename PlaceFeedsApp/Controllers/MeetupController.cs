@@ -15,7 +15,7 @@ namespace PlaceFeeds.Controllers
             _meetupService = meetupService;
         }
 
-        public async Task<JsonResult> GetMeetupData(float latitude, float longitude)
+        public async Task<JsonResult> GetMeetupData(double latitude, double longitude)
         {
             string jsonString = await _meetupService.GetMeetupData(latitude, longitude);
             return new JsonResult(JsonConvert.DeserializeObject(jsonString));

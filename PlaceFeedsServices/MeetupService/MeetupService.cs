@@ -15,7 +15,7 @@ namespace PlaceFeedsServices.MeetupService
             _apiKeyService = apiKeyService;
         }
 
-        public async Task<string> GetMeetupData(float latitude, float longitude)
+        public async Task<string> GetMeetupData(double latitude, double longitude)
         {
             using (HttpClient client = new HttpClient())
             {

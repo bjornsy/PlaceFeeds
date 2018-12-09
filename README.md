@@ -15,7 +15,8 @@ An SPA to show what's going on at any location you search for - including weathe
 * Add a secrets.json file in ```%APPDATA%\Microsoft\UserSecrets\d2432216-127f-4952-914f-928a141b0852\secrets.json```
 
 * Use the following format with your API keys from the above locations:
-```{
+```
+{
   "Location": {
     "ApiKey": "",
     "Secret": ""

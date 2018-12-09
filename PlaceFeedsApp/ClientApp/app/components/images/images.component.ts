@@ -1,7 +1,6 @@
 ﻿import { Component } from '@angular/core';
 import { TransferService } from '../../services/shared/transfer/transfer.service';
 import { ImageService } from '../../services/images/images.service';
-import { GalleryComponent } from './gallery.component';
 import { IPlaceObject } from '../../interfaces/IPlaceObject';
 
 @Component({
@@ -12,7 +11,6 @@ import { IPlaceObject } from '../../interfaces/IPlaceObject';
 export class ImagesComponent {
 
     placeObject: IPlaceObject;
-    result: any;
     imageData: any;
     placeName: string;
     imageList: any[];
@@ -25,41 +23,34 @@ export class ImagesComponent {
                 if (this.placeObject != null) {
                     this.getData(this.placeObject);
                 }
-            }
-            )
+            })
     }
 
     getData(placeObject: IPlaceObject) {
 
-
         switch (this.placeObject.placeType) {
             case 'locality':
-                this.placeName = this.placeObject.townName;
+                this.placeName = placeObject.townName;
                 break;
             case 'administrative_area_level_1':
-                this.placeName = this.placeObject.admin_area_level1;
+                this.placeName = placeObject.admin_area_level1;
                 break;
             case 'country':
-                this.placeName = this.placeObject.country;
+                this.placeName = placeObject.country;
                 break;
             default:
-                this.placeName = this.placeObject.formattedAddress;
+                this.placeName = placeObject.formattedAddress;
                 break;
         }
 
-        this._ImageService.getImageData(this.placeName, this.placeObject.placeType, this.placeObject.latitude, this.placeObject.longitude)
+        this._ImageService.getImageData(this.placeName, placeObject.placeType, placeObject.latitude, placeObject.longitude)
             .subscribe(data => {
-                this.result = data;
-                this.imageData = this.result.imageData.photos.photo;
-                //Below is to get photos with unique owner ids for more variation
-
-                this.imageData = this.filterUniqueOwnerImageData(this.imageData);
+                //Below is to get photos with unique owner ids for more variation            
+                this.imageData = this.filterUniqueOwnerImageData(data.photos.photo);
                 console.log(this.imageData)
-
 
                 //https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}_[mstzb].jpg
                 //https://www.flickr.com/services/api/misc.urls.html
-
 
                 this.imageList = [];
 
@@ -76,7 +67,6 @@ export class ImagesComponent {
                     this.imageList.push(imageUrls);
                 }
                 console.log(this.imageList);
-
             })
 
     }
@@ -113,6 +103,4 @@ export class ImagesComponent {
 
         return uniqueImageData;
     }
-
-
 }

@@ -11,16 +11,10 @@ export class WeatherService {
 
     constructor(private _http: Http) { }
 
-    getWeatherData(lat: number, lon: number): Observable<Response> {
+    getWeatherData(lat: number, lon: number): Observable<any> {
 
-        return this._http.get(`api/Weather/GetWeatherData/?latitude=${lat}&longitude=${lon}`)
-            .map((response: Response) => response.json())
-            .catch(this.handleError);
-    }
-
-    private handleError(error: Response) {
-        console.log(error);
-        return Observable.throw(error.json().error || 'Server error');
+        return this._http.get(`Weather/GetWeatherData/?latitude=${lat}&longitude=${lon}`)
+            .map((response: Response) => response.json());
     }
 
 };

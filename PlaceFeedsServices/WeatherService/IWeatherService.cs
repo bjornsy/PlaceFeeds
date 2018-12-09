@@ -7,6 +7,6 @@ namespace PlaceFeedsServices.WeatherService
 {
     public interface IWeatherService
     {
-        Task<string> GetWeatherData(float latitude, float longitude);
+        Task<string> GetWeatherData(double latitude, double longitude);
     }
 }

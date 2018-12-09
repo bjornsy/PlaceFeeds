@@ -2,16 +2,13 @@
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/observable';
 import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
-
-import { IPlaceObject } from '../../interfaces/IPlaceObject';
 
 @Injectable()
 export class ImageService {
 
     constructor(private _http: Http) { }
 
-    getImageData(placeName: string, placeType: string, lat?: number, lon?: number): Observable<Response> {
+    getImageData(placeName: string, placeType: string, lat?: number, lon?: number): Observable<any> {
 
         let radius: number = null;
         let locationSearchString: string = null;
@@ -21,14 +18,8 @@ export class ImageService {
             locationSearchString = '&lat=' + lat + '&lon=' + lon + '&radius=' + radius + '&radius_units=km'
         }
 
-        return this._http.get(`api/Image/GetImageData/?placeName=${placeName}&locationSearchString=${locationSearchString}`)
-            .map((response: Response) => response.json())
-            .catch(this.handleError);
-    }
-
-    private handleError(error: Response) {
-        console.log(error);
-        return Observable.throw(error.json().error || 'Server error');
+        return this._http.get(`Image/GetImageData/?placeName=${placeName}&locationSearchString=${locationSearchString}`)
+            .map((response: Response) => response.json());
     }
 
 }

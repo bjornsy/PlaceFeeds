@@ -38,7 +38,6 @@ export class LocationSearchComponent {
         this._LocationSearchService.getSearchData(locationName)
             .subscribe(data => {
                 this.result = data;
-                this.result = this.result.locationData;
 
                 if (this.result.status == "OK") {
                     let results = this.result.results[0];

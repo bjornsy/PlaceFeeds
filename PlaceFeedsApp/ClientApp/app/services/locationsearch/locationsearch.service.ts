@@ -11,12 +11,10 @@ export class LocationSearchService {
 
     constructor(private _http: Http) { }
 
-    getSearchData(locationName: string): Observable<Response> {
-
-        return this._http.get('api/LocationSearch/GetLocationData/' + locationName)
+    getSearchData(locationName: string): Observable<any> {
+        return this._http.get('LocationSearch/GetLocationData/' + locationName)
             .map((response: Response) => response.json())
             .catch(this.handleError);
-
     }
 
     public handleError(error: Response) {

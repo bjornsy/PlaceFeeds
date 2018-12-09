@@ -13,7 +13,6 @@ import { IPlaceObject } from '../../interfaces/IPlaceObject';
 export class MeetupComponent {
 
     placeObject: IPlaceObject;
-    result: any;
     meetupData: any;
 
     constructor(private _TransferService: TransferService, private _MeetupService: MeetupService) {
@@ -28,11 +27,9 @@ export class MeetupComponent {
     }
 
     getData(placeObject: IPlaceObject) {
-        this._MeetupService.getMeetupData(this.placeObject.latitude, this.placeObject.longitude)
+        this._MeetupService.getMeetupData(placeObject.latitude, placeObject.longitude)
             .subscribe(data => {
-                this.result = data;
-                this.meetupData = this.result.meetupData;
-                this.meetupData = this.meetupData.slice(0, 5);
+                this.meetupData = data.slice(0, 5);
                 console.log(this.meetupData)
             })
     }

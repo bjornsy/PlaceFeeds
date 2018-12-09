@@ -13,7 +13,6 @@ import { WeatherTemperaturePipe } from './weather-temp.pipe';
 export class WeatherComponent {
 
     placeObject: IPlaceObject;
-    result: any;
     weatherData: any;
 
     constructor(private _TransferService: TransferService, private _WeatherService: WeatherService) {
@@ -28,13 +27,10 @@ export class WeatherComponent {
     }
 
     getData(placeObject: IPlaceObject) {
-        this._WeatherService.getWeatherData(this.placeObject.latitude, this.placeObject.longitude)
+        this._WeatherService.getWeatherData(placeObject.latitude, placeObject.longitude)
             .subscribe(data => {
-                this.result = data;
-                this.weatherData = this.result.weatherData;
-                this.weatherData = this.weatherData.list.slice(0, 5);
+                this.weatherData = data.list.slice(0, 5);
                 console.log(this.weatherData)
             })
     }
-
 }
