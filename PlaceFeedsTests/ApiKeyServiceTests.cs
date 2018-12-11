@@ -21,11 +21,11 @@ namespace PlaceFeedsTests
         [InlineData(ApiType.Image)]
         [InlineData(ApiType.Twitter)]
         [InlineData(ApiType.Meetup)]
-        public void GetApiKeyTests(ApiType value)
+        public void GetApiKeyTests(ApiType apiType)
         {
             ApiKeyService apiKeyService = new ApiKeyService(_configuration);
 
-            string key = apiKeyService.GetApiKey(value);
+            string key = apiKeyService.GetApiKey(apiType);
 
             Assert.False(string.IsNullOrEmpty(key));
         }
@@ -33,11 +33,11 @@ namespace PlaceFeedsTests
         [Theory]
         [InlineData(ApiType.Location)]
         [InlineData(ApiType.Twitter)]
-        public void GetApiSecretTests(ApiType value)
+        public void GetApiSecretTests(ApiType apiType)
         {
             ApiKeyService apiKeyService = new ApiKeyService(_configuration);
 
-            string key = apiKeyService.GetApiSecret(value);
+            string key = apiKeyService.GetApiSecret(apiType);
 
             Assert.False(string.IsNullOrEmpty(key));
         }
