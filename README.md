@@ -2,6 +2,9 @@
 Get all the latest info of any place (Angular 4/.NET Core 2.1/webpack)
 An SPA to show what's going on at any location you search for - including weather, things to do and latest photos taken in that area.
 
+![Example1](Docs/PlaceFeedsExample1.PNG)
+![Example2](Docs/PlaceFeedsExample2.PNG)
+
 ## APIs used (free)
 
 * [Google Maps (Geocoding API)](https://developers.google.com/maps/documentation/)
