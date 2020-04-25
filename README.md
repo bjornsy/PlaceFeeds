@@ -1,5 +1,9 @@
-# PlaceFeeds
+# PlaceFeeds - NO LONGER MAINTAINED
+
+Due to Meetup.com no longer providing a suitable free API, and new versions of Angular and .NET Core, this project is deprecated
+
 Get all the latest info of any place (Angular 4/.NET Core 2.1/webpack)
+
 An SPA to show what's going on at any location you search for - including weather, things to do and latest photos taken in that area.
 
 ![Example1](Docs/PlaceFeedsExample1.PNG)
